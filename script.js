@@ -5,6 +5,23 @@ firebase.initializeApp({
     storageBucket: "treehacksconnect.appspot.com",
     messagingSenderId: "617939153531",
     appId: "1:617939153531:web:437c25c0c8d74dadf3e8de"
-  });
-  var db = firebase.firestore();
+});
+var db = firebase.firestore();
+function clicked(){
+    let userInput = document.getElementById('user-input').value;
+      db.collection("cities").doc("SF").set({content: userInput})
+      .then(() => {
+          console.log("Document successfully written!");
+      })
+      .catch((error) => {
+          console.error("Error writing document: ", error);
+      });
+  }  
+  function load(){
+    db.collection("cities").doc("SF")
+      .onSnapshot((doc) => {
+          console.log("Current data: ", doc.data());
+          document.getElementById('display').innerHTML = doc.data().content;
+      });
+  }
   
