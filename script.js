@@ -9,7 +9,7 @@ firebase.initializeApp({
 var db = firebase.firestore();
 function clicked(){
     let userInput = document.getElementById('user-input').value;
-      db.collection("cities").doc("SF").set({content: userInput})
+      db.collection("cities").doc("oySyO7P7JFElPOfZ4Rdk").set({content: userInput})
       .then(() => {
           console.log("Document successfully written!");
       })
