@@ -8,8 +8,8 @@ firebase.initializeApp({
 });
 var db = firebase.firestore();
 function clicked(){
-    let userInput = document.getElementById('user-input').value;
-      db.collection("cities").doc("oySyO7P7JFElPOfZ4Rdk").set({content: userInput})
+    let userInput = document.getElementById('user_name').value;
+      db.collection("user-data").doc("oySyO7P7JFElPOfZ4Rdk").set({content: userInput})
       .then(() => {
           console.log("Document successfully written!");
       })
@@ -18,7 +18,7 @@ function clicked(){
       });
   }  
   function load(){
-    db.collection("cities").doc("SF")
+    db.collection("user-data").doc("oySyO7P7JFElPOfZ4Rdk")
       .onSnapshot((doc) => {
           console.log("Current data: ", doc.data());
           document.getElementById('display').innerHTML = doc.data().content;
