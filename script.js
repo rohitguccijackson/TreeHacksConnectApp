@@ -7,7 +7,7 @@ firebase.initializeApp({
     appId: "1:617939153531:web:437c25c0c8d74dadf3e8de"
 });
 var db = firebase.firestore();
-//click on the button
+
 function clicked(){
     let userInput = document.getElementById('user_name').value;
       db.collection("user-data").doc("oySyO7P7JFElPOfZ4Rdk").set({content: userInput})
