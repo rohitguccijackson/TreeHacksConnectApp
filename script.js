@@ -10,7 +10,9 @@ var db = firebase.firestore();
 
 function clicked(){
     let userInput = document.getElementById('user_name').value;
-      db.collection("user-data").doc("oySyO7P7JFElPOfZ4Rdk").set({content: userInput})
+    let userInput2 = document.getElementById('ddSelect').value;
+      db.collection("user-data").doc("oySyO7P7JFElPOfZ4Rdk").set({content: userInput, actvity: userInput2})
+
       .then(() => {
           console.log("Document successfully written!");
       })
